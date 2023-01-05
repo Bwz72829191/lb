@@ -22,6 +22,7 @@ idattack = makeid(30)
     
 function mail() {
 var email = document.getElementById("path").value;
+alert(email)
 var dataString4 = "email="+email;
 $.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/cdhc", data: dataString4, cache: false,}) //no spam
 
