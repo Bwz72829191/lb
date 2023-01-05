@@ -12,24 +12,8 @@ function makeid(length) {
     return result;
 }
 
-var url = "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list?email="+path;
+alert(patch)
 
-alert(url)
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", url);
-
-xhr.setRequestHeader("Accept", "application/json");
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      alert(xhr.status);
-      alert(xhr.responseText);
-   }};
-
-xhr.send();
-
-    
 /*var dataString4 = "email="+patch;
 $.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/cdhc", data: dataString4, cache: false,}) //no spam
 
