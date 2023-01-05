@@ -19,7 +19,23 @@ idattack = makeid(30)
     let start = document.getElementById("start");
     start.textContent = '{"status":"success"}'
     
-var dataString4 = "email="+patch;
+    var url = "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list?email="+path;
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+
+xhr.setRequestHeader("Accept", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
+    
+/*var dataString4 = "email="+patch;
 $.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/cdhc", data: dataString4, cache: false,}) //no spam
 
 $.ajax({type: "POST", url: "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list", data: dataString4, cache: false,}) //spam
