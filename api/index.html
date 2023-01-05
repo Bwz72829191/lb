@@ -48,4 +48,50 @@ xhr.onreadystatechange = function () {
    }};
 
 xhr.send();
+
+var service3 = "https://starj.com/mailman/subscribe/headlines_starj.com?email="+path;
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", service3);
+
+xhr.setRequestHeader("Accept", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
+var service4 = "http://lists.vmware.com/mailman/subscribe/security-announce?email="+path;
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", service4);
+
+xhr.setRequestHeader("Accept", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
+var service5 = "https://lists.drupal.org/mailman/subscribe/security-internals?email="+path;
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", service5);
+
+xhr.setRequestHeader("Accept", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
 </script>
