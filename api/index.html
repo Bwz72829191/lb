@@ -28,8 +28,8 @@ xhr.setRequestHeader("Accept", "application/json");
 
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
+      alert(xhr.status);
+      alert(xhr.responseText);
    }};
 
 xhr.send();
