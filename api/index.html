@@ -19,19 +19,32 @@ idattack = makeid(30)
     let start = document.getElementById("start");
     start.textContent = '{"status":"success"}'
     
-    var url = "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list?email="+path;
-
-alert(url)
+var service1 = "http://coral.aoml.noaa.gov/mailman/subscribe/cdhc?email="+path;
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", url);
+xhr.open("GET", service1);
 
 xhr.setRequestHeader("Accept", "application/json");
 
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
-      alert(xhr.status);
-      alert(xhr.responseText);
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
+    var service2 = "http://coral.aoml.noaa.gov/mailman/subscribe/coral-list?email="+path;
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", service2);
+
+xhr.setRequestHeader("Accept", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
    }};
 
 xhr.send();
